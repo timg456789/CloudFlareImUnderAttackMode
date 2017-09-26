@@ -1,5 +1,7 @@
 # CloudFlare I'm Under Attack Mode JavaScript Challenge Question
 
+This project is intended for users who wish to **safely** and programmatically browser a website which may be under a DDOS attack. It's not intended to assist in attacks of any kind. It's only written in the way it is to prevent executing foreign JavaScript.
+
 [CloudFlare Documentation](https://support.cloudflare.com/hc/en-us/articles/200170076-What-does-I-m-Under-Attack-Mode-do-)
 
 >You will need to have both JavaScript and Cookies turned on in your browser to pass the check. The check is in place to make sure that you are not part of a botnet.
