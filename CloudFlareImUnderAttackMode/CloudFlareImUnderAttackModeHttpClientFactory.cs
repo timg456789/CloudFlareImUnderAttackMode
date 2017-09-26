@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace CloudFlareImUnderAttackMode
 {
-    class CloudFlareImUnderAttackModeHttpClientFactory
+    public class CloudFlareImUnderAttackModeHttpClientFactory
     {
-        public void Init(Uri baseUri)
+        public HttpClient Create(Uri baseUri)
         {
             CookieContainer cookies = new CookieContainer();
             HttpClientHandler cookieHandler = new HttpClientHandler { CookieContainer = cookies };
@@ -27,6 +27,8 @@ namespace CloudFlareImUnderAttackMode
             HttpResponseMessage clearanceResponse = asyncClearanceResponse.Result;
 
             clearanceResponse.EnsureSuccessStatusCode();
+
+            return httpClient;
         }
     }
 }
