@@ -18,17 +18,25 @@ namespace CloudFlareImUnderAttackMode
 
             var html = respone.Content.ReadAsStringAsync().Result;
 
+            if (!respone.IsSuccessStatusCode)
+            {
+                GetClearanceCookie(httpClient, html);
+            }
+
+            return httpClient;
+        }
+
+        public void GetClearanceCookie(HttpClient client, string html)
+        {
             System.Threading.Thread.Sleep(4000);
 
             DecodeChallengeQuestion decodeChallengeQuestion = new DecodeChallengeQuestion();
             var clearanceUrl = decodeChallengeQuestion.GetClearanceUrl(html);
 
-            Task<HttpResponseMessage> asyncClearanceResponse = httpClient.GetAsync(clearanceUrl);
+            Task<HttpResponseMessage> asyncClearanceResponse = client.GetAsync(clearanceUrl);
             HttpResponseMessage clearanceResponse = asyncClearanceResponse.Result;
 
             clearanceResponse.EnsureSuccessStatusCode();
-
-            return httpClient;
         }
     }
 }

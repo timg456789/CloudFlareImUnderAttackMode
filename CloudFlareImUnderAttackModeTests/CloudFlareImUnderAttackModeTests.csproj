@@ -46,6 +46,7 @@
     <Compile Include="CloudFlareImUnderAttackModeFullHtmlTests.cs" />
     <Compile Include="CloudFlareImUnderAttackModeHtmlToClearanceRequestTests.cs" />
     <Compile Include="CloudFlareImUnderAttackModeDecodeChallengeQuestionTests.cs" />
+    <Compile Include="NationalGalleryOfArtTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
